@@ -2,7 +2,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({IntroText = "Sa zort adam",Name = "Kediye Special Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Cathe is impostor sussy among us ur under fbi s3x oh mey gad"})
 
 --Value lar
-_G.Auto = false
+_G.Auto = true
 
 --function lar
 function Auto()
