@@ -44,6 +44,7 @@ workspace.THINGS.REMOTES.selectSearched:FireServer(ohString1)
 local ohInstance1 = game:GetService("Players").LocalPlayer
 
 workspace.THINGS.REMOTES.rebirth:InvokeServer(ohInstance1)
+wait(.0000000001)
 end
 end
 --menü
