@@ -2,68 +2,63 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({IntroText = "Sa zort adam",Name = "Kediye Special Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Cathe is impostor sussy among us ur under fbi s3x oh mey gad"})
 
 --Value lar
-_G.Auto = true
+_G.EA = false
 
 --function lar
-function Auto()
-    while _G.Auto == true do
-wait(.0000000001)
+function EA()
+    while _G.EA == true do
+
 local ohString1 = "Supermarket Egg"
 local ohString2 = "tripleEgg"
 
-workspace.THINGS.REMOTES.buyEgg:InvokeServer(ohString1, ohString2)
+workspace.__THINGS.__REMOTES.buyEgg:InvokeServer(ohString1, ohString2)
 
 local ohInstance1 = game:GetService("Players").LocalPlayer.PlayerGui
 
-workspace.THINGS.REMOTES.confirmSellPetToMerchant:InvokeServer(ohInstance1)
+workspace.__THINGS.__REMOTES.confirmSellPetToMerchant:InvokeServer(ohInstance1)
 
 local ohString1 = "Butter"
 
-workspace.THINGS.REMOTES.selectSearched:FireServer(ohString1)
+workspace.__THINGS.__REMOTES.selectSearched:FireServer(ohString1)
 
 local ohString1 = "Sugar"
 
-workspace.THINGS.REMOTES.selectSearched:FireServer(ohString1)
+workspace.__THINGS.__REMOTES.selectSearched:FireServer(ohString1)
 
 local ohString1 = "Flour"
 
-workspace.THINGS.REMOTES.selectSearched:FireServer(ohString1)
+workspace.__THINGS.__REMOTES.selectSearched:FireServer(ohString1)
 
 local ohString1 = "Rice"
 
-workspace.THINGS.REMOTES.selectSearched:FireServer(ohString1)
+workspace.__THINGS.__REMOTES.selectSearched:FireServer(ohString1)
 
 local ohString1 = "Milk"
 
-workspace.THINGS.REMOTES.selectSearched:FireServer(ohString1)
+workspace.__THINGS.__REMOTES.selectSearched:FireServer(ohString1)
 
 local ohString1 = "Egg"
 
-workspace.THINGS.REMOTES.selectSearched:FireServer(ohString1)
+workspace.__THINGS.__REMOTES.selectSearched:FireServer(ohString1)
 
 local ohInstance1 = game:GetService("Players").LocalPlayer
 
-workspace.THINGS.REMOTES.rebirth:InvokeServer(ohInstance1)
-wait(.0000000001)
+workspace.__THINGS.__REMOTES.rebirth:InvokeServer(ohInstance1)
 end
 end
---menü
 local FarmTab = Window:MakeTab({
 	Name = "Kedi Bak",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-
---buton
 FarmTab:AddToggle({
 	Name = "acma kapama",
 	Default = false,
 	Callback = function(Value)
-_G.Auto = Value 
-Auto() 
+_G.EA = Value 
+EA() 
     end
 })
-
 OrionLib:Init()
 
 task.wait(2)
