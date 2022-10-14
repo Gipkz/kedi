@@ -1,8 +1,9 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({IntroText = "Sa zort adam",Name = "Kediye Special Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Cathe is impostor sussy among us ur under fbi s3x oh mey gad"})
+local Window = OrionLib:MakeWindow({IntroText = "Sa zort adam",Name = "Kediye Special Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Kedi +18 anime girl hot fbi s3x OMG"})
 
 --Value lar
 _G.EA = false
+_G.AE = false
 
 --function lar
 function EA()
@@ -46,19 +47,67 @@ local ohInstance1 = game:GetService("Players").LocalPlayer
 workspace.__THINGS.__REMOTES.rebirth:InvokeServer(ohInstance1)
 end
 end
+
 local FarmTab = Window:MakeTab({
 	Name = "Kedi Bak",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 FarmTab:AddToggle({
-	Name = "acma kapama",
+	Name = "Mor coin farm",
 	Default = false,
 	Callback = function(Value)
 _G.EA = Value 
 EA() 
     end
 })
+FarmTab:AddTextbox({
+	Name = "Isim Degistirme",
+	Default = "isim yaz",
+	TextDisappear = false,
+	Callback = function(Value)
+-- credits to 07granddad for making this
+while game:IsLoaded() == false do wait() end
+local fakeplr = {["Name"] = (Value), ["UserId"] = "163211576"}
+local otherfakeplayers = {["Name"] = "Anan", ["UserId"] = "1"}
+local lplr = game:GetService("Players").LocalPlayer
+
+local function plrthing(obj, property)
+    for i,v in pairs(game:GetService("Players"):GetChildren()) do
+        if v ~= lplr then
+            obj[property] = obj[property]:gsub(v.Name, otherfakeplayers["Name"])
+            obj[property] = obj[property]:gsub(v.DisplayName, otherfakeplayers["Name"])
+            obj[property] = obj[property]:gsub(v.UserId, otherfakeplayers["UserId"])
+        else
+            obj[property] = obj[property]:gsub(v.Name, fakeplr["Name"])
+            obj[property] = obj[property]:gsub(v.DisplayName, fakeplr["Name"])
+            obj[property] = obj[property]:gsub(v.UserId, fakeplr["UserId"])
+        end
+    end
+end
+
+local function newobj(v)
+    if v:IsA("TextLabel") or v:IsA("TextButton") then
+        plrthing(v, "Text")
+        v:GetPropertyChangedSignal("Text"):connect(function()
+            plrthing(v, "Text")
+        end)
+    end
+    if v:IsA("ImageLabel") then
+        plrthing(v, "Image")
+        v:GetPropertyChangedSignal("Image"):connect(function()
+            plrthing(v, "Image")
+        end)
+    end
+end
+
+for i,v in pairs(game:GetDescendants()) do
+    newobj(v)
+end
+game.DescendantAdded:connect(newobj)
+end	
+})
+
 OrionLib:Init()
 
 task.wait(2)
