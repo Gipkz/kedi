@@ -4,7 +4,39 @@ local Window = OrionLib:MakeWindow({IntroText = "Sa zort adam",Name = "Kediye Sp
 --Value lar
 _G.EA = false
 _G.AE = false
+--ee
+function AE()
+    while _G.AE == true do
+local tp_table = {
+    tp1 = Vector3.new(-1524.52185, 6.05332851, 834.887329, 0.0349101461, -0.0485917255, 0.998208463, 2.23317272e-07, 0.998817265, 0.0486213528, -0.999390483, -0.00169715565, 0.0348688662), -- 1. gidilen yer
+    tp2 = Vector3.new(-1576.44214, 5.04418564, 965.319458, 0.0209182687, 0.0305817332, 0.999313354, -2.04941273e-07, 0.999532044, -0.030588422, -0.999781191, 0.000639652018, 0.0209084861),  -- 2. gidilen yer
+    tp3 = Vector3.new(-1826.86072, 5.13494158, 815.082825, 0.0348788165, -0.0914902985, 0.995194972, -1.64650643e-07, 0.995800853, 0.0915459991, -0.999391556, -0.00319318008, 0.034732338),
+    tp4 = Vector3.new(-1708.63928, 6.05743694, 898.81311, 0.125296876, -0.0660135448, 0.989920676, -2.41888358e-07, 0.997783899, 0.066537939, -0.992119312, -0.00833723508, 0.125019193), 
+    tp5 = Vector3.new(-1788.21155, 6.8588953, 958.251343, 0.0139488121, -0.192709967, 0.981156588, -1.66004838e-07, 0.981252074, 0.192728713, -0.999902725, -0.00268849963, 0.0136872688),  
+}
 
+local tween_s = game:GetService('TweenService')
+local tweeninfo = TweenInfo.new(1,Enum.EasingStyle.Linear)
+
+local lp = game.Players.LocalPlayer
+
+function tween_tp(v)
+    if lp.Character and 
+    lp.Character:FindFirstChild('HumanoidRootPart') then
+        local cf = CFrame.new(v)
+        local a = tween_s:Create(lp.Character.HumanoidRootPart,tweeninfo,{CFrame=cf})
+        a:Play()
+         a.Completed:Wait()
+    end
+end
+
+tween_tp(tp_table.tp1)
+tween_tp(tp_table.tp2)
+tween_tp(tp_table.tp3)
+tween_tp(tp_table.tp4)
+tween_tp(tp_table.tp5)
+end
+end
 --function lar
 function EA()
     while _G.EA == true do
@@ -59,6 +91,14 @@ FarmTab:AddToggle({
 	Callback = function(Value)
 _G.EA = Value 
 EA() 
+    end
+})
+FarmTab:AddToggle({
+	Name = "Tp",
+	Default = false,
+	Callback = function(Value)
+_G.AE = Value 
+AE() 
     end
 })
 FarmTab:AddTextbox({
